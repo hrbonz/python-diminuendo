@@ -1,0 +1,6 @@
+# dev
+sphinx
+# releasing
+bumpr
+tox
+wheel

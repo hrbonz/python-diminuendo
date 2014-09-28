@@ -1,0 +1,8 @@
+# setuptools
+build
+dist
+*.egg-info
+# sphinx docs
+docs/_build
+docs/_source
+docs/_templates
