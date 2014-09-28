@@ -27,7 +27,7 @@ not using complex regexp. This project uses `beautifulsoup
 Install
 =======
 
-.. code-hilight:: sh
+.. code-block:: sh
 
     $ pip install python-diminuendo
 
@@ -42,18 +42,24 @@ Development
 Test
 ----
 
-Test the package::
+Test the package:
+
+.. code-block:: sh
 
     $ python -m unittest discover
 
-Automatic testing in various environments::
+Automatic testing in various environments:
+
+.. code-block:: sh
 
     $ tox
 
 Release
 =======
 
-Use `bumpr` to release the package::
+Use `bumpr` to release the package:
+
+.. code-block:: sh
 
     $ bumpr -b -m
 
