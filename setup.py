@@ -3,12 +3,17 @@ import os
 from setuptools import setup, find_packages
 
 
+# local path
 here = os.path.abspath(os.path.dirname(__file__))
 
 long_description = open(os.path.join(here, 'README.rst')).read()
 
+# list requirements for setuptools
+requirements = [name.rstrip() for name in open(os.path.join(here,
+                'requirements.txt')).readlines()]
+
 # allow setup.py to be run from any path
-#os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
+os.chdir(os.path.normpath(here))
 
 setup(
     name='python-diminuendo',
@@ -20,6 +25,7 @@ setup(
     url='https://github.com/hrbonz/python-diminuendo',
     description='A generic HTML minifier for python',
     long_description=long_description,
+    install_requires=requirements,
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
@@ -29,5 +35,5 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Topic :: Internet'
     ],
-    keywords='minify',
+    keywords='minify html',
 )
