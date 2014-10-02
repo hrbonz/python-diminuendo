@@ -36,8 +36,33 @@ Usage
 
 **TODO**
 
+HTML minification
+-----------------
+
+.. code-block:: python
+
+    >>> from diminuendo import htmlmin
+    >>> html = """<html>
+        <head>
+            <title>Hello World!</title>
+        </head>
+        <body>
+            <p>Good morning</p>
+        </body>
+    </html>"""
+    >>> minified = htmlmin(html)
+    >>> print minified
+    '<html><head><title>Hello World!</title></head><body><p>Good morning</p></body></html>'
+
 Development
 ===========
+
+Add a minification test
+-----------------------
+
+To add a minification test, simply add the html code as
+``test_name.html`` and its minified version as
+``test_name-minified.html`` in ``test/html``.
 
 Test
 ----
@@ -55,7 +80,7 @@ Automatic testing in various environments:
     $ tox
 
 Release
-=======
+-------
 
 Use `bumpr` to release the package:
 
@@ -69,6 +94,12 @@ Project
 * `Source code on github <https://github.com/hrbonz/python-diminuendo>`_
 * `Documentation on readthedocs <http://python-diminuendo.readthedocs.org/>`_
 * `Package on pypi <https://pypi.python.org/pypi/python-diminuendo>`_
+
+Other projects
+==============
+
+* `django-htmlmin <https://github.com/cobrateam/django-htmlmin>`_
+* `htmlmin <https://github.com/mankyd/htmlmin>`_
 
 License
 =======
