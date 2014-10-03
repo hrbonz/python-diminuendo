@@ -39,7 +39,7 @@ def add_tests(cls):
                                     testname + '-minified.html')
             self.assertEqual(
                 htmlmin.minify(codecs.open(htmlfile).read()),
-                codecs.open(minifile, encoding='utf-8').read())
+                codecs.open(minifile, encoding='utf-8').read().rstrip())
 
         testcase.__doc__ = "test {}".format(testname)
         testcase.__name__ = 'test_' + testname
