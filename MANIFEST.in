@@ -1,2 +1,4 @@
 # include basic files
 include LICENSE README.rst
+# include package requirements
+include requirements.txt

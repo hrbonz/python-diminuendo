@@ -87,6 +87,8 @@ Use `bumpr` to release the package:
 .. code-block:: sh
 
     $ bumpr -b -m
+    [...]
+    $ python setup.py sdist bdist_wheel upload
 
 Project
 =======
