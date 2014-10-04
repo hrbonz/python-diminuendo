@@ -50,7 +50,7 @@ def minify(code, ignore_comments=True, fold_doctype=True,
     mini_soup = space_minify(soup, ignore_comments)
     if fold_doctype is True:
         # monkey patching to remove new line after doctype
-        bs4.element.Doctype.SUFFIX = u">"
+        bs4.element.Doctype.SUFFIX = ">"
     if sys.version_info > (3, 0):
         return str(mini_soup)
     else:
@@ -117,7 +117,7 @@ def space_minify(soup, ignore_comments):
         # conditional comment and
         elif ignore_comments == True and is_comment(soup):
             # remove the element
-            soup.string.replace_with(u'')
+            soup.string.replace_with('')
     return soup
 
 def is_navstr(soup):
