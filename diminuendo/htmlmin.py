@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import re
+import sys
 
 import bs4
 
@@ -49,8 +50,11 @@ def minify(code, ignore_comments=True, fold_doctype=True,
     mini_soup = space_minify(soup, ignore_comments)
     if fold_doctype is True:
         # monkey patching to remove new line after doctype
-        bs4.element.Doctype.SUFFIX = u'>'
-    return unicode(mini_soup)
+        bs4.element.Doctype.SUFFIX = u">"
+    if sys.version_info > (3, 0):
+        return str(mini_soup)
+    else:
+        return unicode(mini_soup)
 
 def space_minify(soup, ignore_comments):
     """Recursive fuction for space character reduction.

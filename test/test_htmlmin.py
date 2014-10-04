@@ -34,12 +34,15 @@ def add_tests(cls):
         # create a generic testcase comparing minified through
         # htmlmin.minify() and provided minified
         def testcase(self):
-            htmlfile = os.path.join(here, 'html', testfile)
-            minifile = os.path.join(here, 'html',
-                                    testname + '-minified.html')
+            htmlfile = codecs.open(os.path.join(here, 'html', testfile))
+            minifile = codecs.open(os.path.join(here, 'html',
+                                   testname + '-minified.html'),
+                                   encoding="utf-8")
             self.assertEqual(
-                htmlmin.minify(codecs.open(htmlfile).read()),
-                codecs.open(minifile, encoding='utf-8').read().rstrip())
+                htmlmin.minify(htmlfile.read()),
+                minifile.read().rstrip())
+            htmlfile.close()
+            minifile.close()
 
         testcase.__doc__ = "test {}".format(testname)
         testcase.__name__ = 'test_' + testname
