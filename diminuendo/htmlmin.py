@@ -14,7 +14,7 @@ EXCLUDE_TAGS = ("pre", "script", "style", "textarea",)
 TEXT_FLOW = ("a", "em", "strong", "small", "s", "cite", "q", "dfn", "abbr",
              "data", "time", "code", "var", "samp", "kbd", "sup", "sub",
              "i", "b", "u", "mark", "ruby", "rt", "rp", "bdi", "bdo",
-             "span", "br", "wbr", "ins", "del")
+             "span", "br", "wbr", "ins", "del", "tt")
 
 # regexp patterns
 re_multi_space = re.compile(r'\s+', re.MULTILINE|re.UNICODE)
